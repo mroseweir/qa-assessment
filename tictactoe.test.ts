@@ -21,21 +21,27 @@ test('I can start a game', async () => {
 
 test('Clicking upper left square adds an X to that square', async () => {
 
-    let button = await (await driver).findElement(By.id('cell-0'));
-    await button.click();
+    let upperLeftBox = await (await driver).findElement(By.id('cell-0'));
+    await upperLeftBox.click();
+
+    expect(await upperLeftBox.getText()).toEqual('X')
 
 });
 
 test('Clicking upper right square adds an X to that square', async () => {
 
-    let button = await (await driver).findElement(By.id('cell-2'));
-    await button.click();
+    let upperRightBox = await (await driver).findElement(By.id('cell-2'));
+    await upperRightBox.click();
+
+    expect(await upperRightBox.getText()).toEqual('X')
 
 });
 
 test('Clicking lower right square adds an X to that square', async () => {
 
-    let button = await (await driver).findElement(By.id('cell-8'));
-    await button.click();
+    let lowerRightBox = await (await driver).findElement(By.id('cell-8'));
+    await lowerRightBox.click();
+
+    expect(await lowerRightBox.getText()).toEqual('X')
 
 });
